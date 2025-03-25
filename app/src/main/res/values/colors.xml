@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+        <!-- Background color -->
+        <color name="background_color">#F5F5F5</color> <!-- Light gray for a clean and peaceful look -->
+
+        <!-- Primary text color -->
+        <color name="primary_text_color">#2E3A59</color> <!-- Dark blue for contrast and readability -->
+
+        <!-- Secondary text color -->
+        <color name="secondary_text_color">#6C757D</color> <!-- Gray for softer text -->
+
+        <!-- Button background color -->
+        <color name="button_background_color">#4A90E2</color> <!-- Soft blue for a calming effect -->
+
+        <!-- Button text color -->
+        <color name="button_text_color">#FFFFFF</color> <!-- White for contrast -->
+
+</resources>
