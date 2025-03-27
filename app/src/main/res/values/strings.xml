@@ -52,5 +52,20 @@
     <string name="location">Location</string>
     <string name="explore_youtube">Explore YouTube</string>
     <string name="get_started">Get Started</string>
+    <string name="todo">Grocery</string>
+    <string name="add_grocery">Add Grocery</string>
+    <string name="add_a_new_grocery_item">Add a new grocery item</string>
+    <string name="list_of_groceries">List of groceries</string>
+    <string name="home_screen">Home Screen</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="welcome_to_our_app">Welcome to our app!</string>
+    <string name="recipe_image">Recipe Image</string>
+    <string name="groceries_rice_beans">Groceries: Rice, Beans</string>
+    <string name="week_1">Week: 1</string>
+    <string name="recipe_name">Recipe Name</string>
+    <string name="select_location">Select Location</string>
+    <string name="add_recipe">Add Recipe</string>
 
 </resources>

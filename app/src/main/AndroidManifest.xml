@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.mealmate">
 
+    <!-- Location Permissions -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Internet Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Camera Permissions with corresponding features -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+    <!-- Media Permissions (updated for Android 13+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <!-- Legacy storage permissions for devices below Android 13 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <application
         android:allowBackup="true"
@@ -16,43 +35,73 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MealMeat"
         tools:targetApi="31">
+
+        <!-- Splash Screen Activity -->
         <activity
-            android:name=".GroceryFragmennt"
-            android:exported="false" />
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Onboarding Activities -->
         <activity
-            android:name=".AddGrocery"
-            android:exported="false" />
-        <activity
-            android:name=".GroceryFragment"
-            android:exported="false" />
-        <activity
-            android:name=".MapActivity"
-            android:exported="false" />
-        <activity
-            android:name=".slider_screen"
-            android:exported="false" />
-        <activity
-            android:name=".onBoarding.ViewPagerAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".onBoarding.NavigationActivity"
+            android:name=".onBoarding.onBoardingMainActivity"
             android:exported="false" />
         <activity
             android:name=".onBoarding.GetStarted"
             android:exported="false" />
         <activity
+            android:name=".SliderScreen"
+            android:exported="false" />
+
+        <!-- Authentication Activities -->
+        <activity
+            android:name=".LoginPage"
+            android:exported="false" />
+        <activity
+            android:name=".SignupPage"
+            android:exported="false" />
+        <activity
+            android:name=".ForgetPassword"
+            android:exported="false" />
+
+        <!-- Main App Activities -->
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".onBoarding.onBoardingMainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".onBoarding.NavigationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutPage"
+            android:exported="false" />
+        <activity
+            android:name=".Weeks"
+            android:exported="false" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <!-- Recipe Related Activities -->
+        <activity
+            android:name=".AddRecipe"
+            android:exported="false" />
+        <activity
+            android:name=".ItemRecipe"
+            android:exported="false" />
 
+
+        <!-- Grocery Related Activities -->
+        <activity
+            android:name=".AddGrocery"
+            android:exported="false" />
+
+        <!-- Map Activity -->
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+
+        <!-- Google Maps API Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />

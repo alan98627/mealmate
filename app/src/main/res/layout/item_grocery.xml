@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="16dp"
+
     android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,6 +23,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/grocery_details"
+            android:src="@drawable/upload_image"
             android:contentDescription="@string/grocery_image_description" />
 
         <LinearLayout
@@ -50,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:textColor="#124156"
+                android:textColor="#478A04"
                 android:text="@string/grocery_price" />
 
             <TextView
@@ -66,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:textColor="#52712e"
+                android:textColor="#0060A4"
                 android:text="@string/grocery_location" />
         </LinearLayout>
 

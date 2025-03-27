@@ -9,10 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.mealmate.Model.Grocery;
 import com.example.mealmate.R;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.ViewHolder> {
@@ -21,7 +20,7 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.ViewHold
 
     public GroceryAdapter(Context context, List<Grocery> groceries) {
         this.context = context;
-        this.groceries = groceries;
+        this.groceries = (groceries != null) ? groceries : new ArrayList<>();
     }
 
     @NonNull
@@ -38,12 +37,24 @@ public class GroceryAdapter extends RecyclerView.Adapter<GroceryAdapter.ViewHold
         holder.price.setText("$" + grocery.getPrice());
         holder.description.setText(grocery.getDescription());
         holder.location.setText(grocery.getLocation());
-        holder.image.setImageURI(Uri.parse(grocery.getImagePath()));
+
+        // Check for null or empty image path
+        if (grocery.getImagePath() != null && !grocery.getImagePath().isEmpty()) {
+            holder.image.setImageURI(Uri.parse(grocery.getImagePath()));
+        } else {
+            holder.image.setImageResource(R.drawable.placeholder_img); // Use default placeholder image
+        }
     }
 
     @Override
     public int getItemCount() {
         return groceries.size();
+    }
+
+    // Method to update the grocery list dynamically
+    public void setGroceryList(List<Grocery> newGroceries) {
+        this.groceries = (newGroceries != null) ? newGroceries : new ArrayList<>();
+        notifyDataSetChanged();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

@@ -1,81 +1,50 @@
 package com.example.mealmate.Model;
 
 import android.net.Uri;
-import androidx.annotation.NonNull;
 
 public class Grocery {
     private String id;
     private String name;
     private String description;
     private double price;
-    private Uri image;
+    private Uri imageUri;
     private boolean purchased;
-    private String location; // Added field for location
-    private String imagePath; // Added field for image path
+    private String location;
+    private String imagePath;
 
-    public Grocery(String id, String name, String description, double price, Uri image, boolean purchased, String location, String imagePath) {
+    public Grocery(String id, String name, String description, double price, Uri imageUri, boolean purchased, String location, String imagePath) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.image = image;
+        this.imageUri = imageUri;
         this.purchased = purchased;
         this.location = location;
         this.imagePath = imagePath;
     }
 
-    public String getId() {
-        return id;
-    }
+    // Getters and Setters
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public String getName() {
-        return name;
-    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 
-    public String getDescription() {
-        return description;
-    }
+    public Uri getImage() { return imageUri; }
+    public void setImage(Uri imageUri) { this.imageUri = imageUri; }
 
-    public double getPrice() {
-        return price;
-    }
+    public boolean isPurchased() { return purchased; }
+    public void setPurchased(boolean purchased) { this.purchased = purchased; }
 
-    public Uri getImage() {
-        return image;
-    }
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
 
-    public boolean isPurchased() {
-        return purchased;
-    }
-
-    // Getter for location
-    public String getLocation() {
-        return location;
-    }
-
-    // Getter for image path
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    @NonNull
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", image=" + image +
-                ", price=" + price +
-                ", purchased=" + purchased +
-                '}';
-    }
+    public String getImagePath() { return imagePath; }
+    public void setImagePath(String imagePath) { this.imagePath = imagePath; }
 }

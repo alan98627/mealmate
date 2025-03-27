@@ -13,7 +13,16 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        // Enable BuildConfig field generation
+        buildConfigField("String", "MAPS_API_KEY", "\"${properties["MAPS_API_KEY"]}\"")
+
+        // For manifest placeholder
+        manifestPlaceholders["MAPS_API_KEY"] = properties["MAPS_API_KEY"] as? String ?: ""
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
@@ -23,6 +32,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
         }
     }
     compileOptions {

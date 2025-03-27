@@ -8,19 +8,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Main Content -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp"
-        android:background="#ffffff"
-        android:orientation="vertical">
+        android:background="#ffffff">
 
         <LinearLayout
             android:id="@+id/layout_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="@drawable/rounded"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingStart="15dp"
             android:paddingEnd="15dp">
@@ -29,64 +28,58 @@
                 android:id="@+id/imagemenu"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:contentDescription="@string/menu_icon_description"
-                android:scaleType="centerCrop"
-                android:src="@drawable/menu" />
+                android:src="@drawable/menu"
+                android:contentDescription="@string/menu_icon_description" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:baselineAligned="false"
+                android:layout_weight="1"
                 android:text="@string/mealmate"
                 android:textColor="#FFEAD1"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:gravity="center"/>
 
             <ImageView
                 android:id="@+id/imgnotification"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:contentDescription="@string/notification_icon_description"
                 android:src="@drawable/notification"
-                />
+                android:contentDescription="@string/notification_icon_description" />
 
             <ImageView
                 android:id="@+id/imgsearch"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="40dp"
-                android:contentDescription="@string/search_icon_description"
-                android:src="@drawable/search" />
+                android:layout_marginStart="16dp"
+                android:src="@drawable/search"
+                android:contentDescription="@string/search_icon_description" />
         </LinearLayout>
 
-        <LinearLayout
+        <FrameLayout
             android:id="@+id/mainScreen"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_below="@id/layout_toolbar"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_home_24"
-            android:contentDescription="@string/submit"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_margin="16dp" />
+            android:layout_margin="16dp"
+            android:src="@drawable/baseline_add_24"
+            android:contentDescription="@string/add_recipe" />
     </RelativeLayout>
 
+    <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
-        android:layout_width="240dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:menu="@menu/menu"
         android:layout_gravity="start"
-        tools:ignore="VisualLintBounds">
-</com.google.android.material.navigation.NavigationView>
-
-
-    </androidx.drawerlayout.widget.DrawerLayout>
+        app:menu="@menu/menu"
+    android:fitsSystemWindows="true"/>
+</androidx.drawerlayout.widget.DrawerLayout>

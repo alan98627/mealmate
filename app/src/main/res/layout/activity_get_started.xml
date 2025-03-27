@@ -20,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_marginEnd="15dp"
-        android:src="@drawable/start"/>
+            android:contentDescription="@string/explore_youtube"
+            android:src="@drawable/start"/>
     </androidx.cardview.widget.CardView>
 
     <TextView
